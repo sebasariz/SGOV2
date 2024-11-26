@@ -1,0 +1,32 @@
+{
+    "channelId": "fcm_fallback_notification_channel",
+    "color": null,
+    "data": {},
+    "finish": [Function finish],
+    "foreground": true,
+    "id": "-1712361286",
+    "message": "Nueva notificacion",
+    "priority": "high",
+    "sound": null,
+    "tag": "campaign_collapse_key_3182355555457906268",
+    "title": "Titulo",
+    "userInteraction": false,
+    "visibility": "private"
+};
+
+
+{
+"channelId": "fcm_fallback_notification_channel", 
+        "color": null, 
+        "data": {}, 
+        "finish": [Function finish], 
+        "foreground": true, 
+        "id": "-1659701665", 
+        "message": null, 
+        "priority": "high", 
+        "sound": null, 
+        "tag": null, 
+        "title": "Alerta dispositivo", 
+        "userInteraction": false, 
+        "visibility": "private"
+}

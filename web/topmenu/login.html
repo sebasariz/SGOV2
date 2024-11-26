@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>Quantum Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+	
+  	<!-- Icon Set -->
+  	<link href="../css/icon.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Animsition -->
+    <link href="../css/animsition.min.css" rel="stylesheet">
+
+  	<!-- Core css -->
+  	<link href="../css/app.css" rel="stylesheet">
+  </head>
+
+	<body class="bg-dark">
+    
+    <!-- wrapper -->
+		<div class="wrapper animsition">
+      <div class="container text-center">
+        <h1 class="font-header login-header text-upper">Quantum<span class="text-main">Admin</span></h1>
+        
+        <div class="single-wrap">
+          <div class="single-inner-padding text-center">
+            <h3 class="font-header no-m-t">Login to your account</h3>
+
+            <div class="dots-divider m-t-20 center-block"><span class="icon-flickr4"></span></div>
+
+            <div class="form-group form-input-group m-t-30 m-b-5">
+              <input type="text" class="form-control input-lg font-14" placeholder="Email Address">
+              <input type="password" class="form-control input-lg font-14" placeholder="Password">
+            </div>
+
+            <div class="m-l-10 font-11 text-left"><a href="#">Forgot your password?</a></div>
+
+            <a href="index.html" class="btn btn-main btn-lg btn-block font-14 m-t-30 animsition-link">Login</a>
+
+            <div class="m-t-20 text-muted font-11">Don't have an account?</div>
+
+            <a href="register.html" class="btn btn-dark btn-lg btn-block font-14 m-t-20 animsition-link">Create an Account</a>
+          </div><!-- /.login-inner -->
+        </div><!-- /.login-wrap -->
+      </div><!-- /.container -->
+    </div>
+    <!-- /.wrapper -->
+
+    
+		<!-- Jquery -->
+  	<script src="../js/jquery-1.11.2.min.js"></script>
+  	
+    <!-- Bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+  	<!-- Modernizr -->
+    <script src="../js/modernizr.min.js"></script>
+
+    <!-- Slim Scroll -->
+    <script src="../js/jquery.slimscroll.min.js"></script>
+
+    <!-- Animsition -->
+    <script src="../js/jquery.animsition.min.js"></script>
+
+    <script>
+      $(function()  {
+        $(".animsition").animsition({
+        
+          inClass               :   'zoom-in-sm',
+          outClass              :   'zoom-out-sm',
+          inDuration            :    1500,
+          outDuration           :    800,
+          linkElement           :   '.animsition-link',
+          // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+          loading               :    true,
+          loadingParentElement  :   'body', //animsition wrapper element
+          loadingClass          :   'animsition-loading',
+          unSupportCss          : [ 'animation-duration',
+                                    '-webkit-animation-duration',
+                                    '-o-animation-duration'
+                                  ],
+          overlay               :   false,
+          
+          overlayClass          :   'animsition-overlay-slide',
+          overlayParentElement  :   'body'
+        });
+      });
+    </script>
+	</body>
+</html>

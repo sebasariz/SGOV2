@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>Quantum Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+	
+  	<!-- Icon Set -->
+  	<link href="../css/icon.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Animsition -->
+    <link href="../css/animsition.min.css" rel="stylesheet">
+
+  	<!-- Core css -->
+  	<link href="../css/app.css" rel="stylesheet">
+  </head>
+
+	<body>
+    
+    <!-- wrapper -->
+		<div class="wrapper animsition">
+      <div class="container text-center">
+        <div class="text-center font-header page-error-type line-1">404</div> 
+        <h2 class="font-header">Page Not Found</h2>
+        <div class="page-error-text m-t-20">We couldn't find the page you are looking for</div> 
+        <div class="text-center m-t-30">
+          <a href="#" class="btn btn-main btn-lg m-r-10">Email Us</a>
+          <a href="index.html" class="btn btn-gray btn-lg animsition-link"><span class="hidden-xs">Go to</span> Home Page</a>
+        </div> 
+      </div><!-- /.container -->
+    </div>
+    <!-- /.wrapper -->
+
+    
+		<!-- Jquery -->
+  	<script src="../js/jquery-1.11.2.min.js"></script>
+  	
+    <!-- Bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+  	<!-- Modernizr -->
+    <script src="../js/modernizr.min.js"></script>
+
+    <!-- Slim Scroll -->
+    <script src="../js/jquery.slimscroll.min.js"></script>
+
+    <!-- Animsition -->
+    <script src="../js/jquery.animsition.min.js"></script>
+
+    <script>
+      $(function()  {
+        $(".animsition").animsition({
+        
+          inClass               :   'zoom-in-sm',
+          outClass              :   'zoom-out-sm',
+          inDuration            :    1500,
+          outDuration           :    800,
+          linkElement           :   '.animsition-link',
+          // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+          loading               :    true,
+          loadingParentElement  :   'body', //animsition wrapper element
+          loadingClass          :   'animsition-loading',
+          unSupportCss          : [ 'animation-duration',
+                                    '-webkit-animation-duration',
+                                    '-o-animation-duration'
+                                  ],
+          overlay               :   false,
+          
+          overlayClass          :   'animsition-overlay-slide',
+          overlayParentElement  :   'body'
+        });
+      });
+    </script>
+	</body>
+</html>

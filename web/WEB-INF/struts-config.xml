@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans> 
+        <form-bean name="Usuario" type="com.iammagis.sga.mongo.beans.Usuario"/> 
+        <form-bean name="Empresa" type="com.iammagis.sga.mongo.beans.Empresa"/>
+        <form-bean name="Fabricante" type="com.iammagis.sga.mongo.beans.Fabricante"/>
+        <form-bean name="Pedido" type="com.iammagis.sga.mongo.beans.Pedido"/> 
+        <form-bean name="Producto" type="com.iammagis.sga.mongo.beans.Producto"/> 
+        <form-bean name="Pago" type="com.iammagis.sga.mongo.beans.Pago"/> 
+        <form-bean name="Deudor" type="com.iammagis.sga.mongo.beans.Deudor"/> 
+        <form-bean name="IOTDevice" type="com.iammagis.sga.mongo.beans.IOTDevice"/> 
+        <form-bean name="IOTDeviceAlarma" type="com.iammagis.sga.mongo.beans.IOTDeviceAlarma"/> 
+        <form-bean name="ServicioRiesgoInterno" type="com.iammagis.sga.mongo.beans.ServicioRiesgoInterno"/> 
+        <form-bean name="Paquete" type="com.iammagis.sga.mongo.beans.Paquete"/> 
+        <form-bean name="Geocerca" type="com.iammagis.sga.mongo.beans.Geocerca"/> 
+        <form-bean name="Direccion" type="com.iammagis.sga.mongo.beans.Direccion"/> 
+        <form-bean name="ArchivoDirecciones" type="com.iammagis.sga.mongo.beans.ArchivoDirecciones"/> 
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="login"  path="/Login.sga"/>
+        <forward name="fail"  path="/Login.sga"/> 
+    </global-forwards>
+
+    <action-mappings> 
+        
+        <!--FRONT-->
+        <action path="/LoadFrontLogin" type="com.iammagis.sga.mongo.front.LoadFrontLogin">
+            <forward name="success" path="/login.jsp"/>
+        </action>  
+        
+        
+        <action path="/Login" forward="/login.jsp"/> 
+        <action path="/Olvido" forward="/olvido.jsp"/> 
+        <!--Usuario-->
+        <action path="/LoadLogin" type="com.iammagis.sga.administracion.usuario.LoadLogin">
+            <forward name="success" path="/login.jsp"/>
+        </action>  
+        <action input="/login.jsp" name="Usuario" path="/LoginUsuario" type="com.iammagis.sga.administracion.usuario.LoginUsuario">
+            <forward name="success" path="/systema.jsp"/>
+            <forward name="fail" path="/login.jsp"/> 
+        </action>  
+        <action path="/LoadInicio" type="com.iammagis.sga.administracion.usuario.LoadInicio">
+            <forward name="success" path="/systema.jsp"/> 
+        </action> 
+        <action name="Usuario" path="/LogoutUsuario" type="com.iammagis.sga.administracion.usuario.LogoutUsuario">
+            <forward name="success" path="/LoadLogin.sga"/> 
+        </action> 
+        <action name="Usuario" path="/Recuperar" type="com.iammagis.sga.administracion.usuario.Recuperar">
+            <forward name="success" path="/olvido.jsp"/> 
+        </action> 
+        <action name="Usuario" path="/LoadUsuarioJson" type="com.iammagis.sga.administracion.usuario.LoadUsuarioJson"/>
+        <action name="Usuario" path="/DeleteUsuario" type="com.iammagis.sga.administracion.usuario.DeleteUsuario"/>
+        <action name="Usuario" path="/EditUsuario" type="com.iammagis.sga.administracion.usuario.EditUsuario"/>
+        <action name="Usuario" path="/CreateUsuario" type="com.iammagis.sga.administracion.usuario.CreateUsuario"/>
+        <action path="/LoadUsuarios" type="com.iammagis.sga.administracion.usuario.LoadUsuarios">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        
+        <!--Empresas-->
+        <action path="/LoadEmpresaJson" type="com.iammagis.sga.administracion.empresa.LoadEmpresaJson"/>
+        <action name="Empresa" path="/EditEmpresa" type="com.iammagis.sga.administracion.empresa.EditEmpresa"/>
+        <action path="/DeleteEmpresa" type="com.iammagis.sga.administracion.empresa.DeleteEmpresa"/>
+        <action name="Empresa" path="/CreateEmpresa" type="com.iammagis.sga.administracion.empresa.CreateEmpresa"/>
+        <action name="Empresa" path="/MasivaCliente" type="com.iammagis.sga.administracion.empresa.MasivaCliente"/>
+        <action path="/LoadEmpresas" type="com.iammagis.sga.administracion.empresa.LoadEmpresas"> 
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <!--ASIGNACION SUBMODULOS-->
+        <action path="/LoadAsignacionSubmodulos" type="com.iammagis.sga.administracion.asignacionmodulos.LoadAsignacionSubmodulos">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadSubmodulosJson" type="com.iammagis.sga.administracion.asignacionmodulos.LoadSubmodulosJson"/>
+        <action path="/SaveSubmodulo" type="com.iammagis.sga.administracion.asignacionmodulos.SaveSubmodulo"/>
+        
+        <!--ESTADO DE CUENTA-->
+        <action path="/LoadEstadoCuenta" type="com.iammagis.sga.reporte.estadocuenta.LoadEstadoCuenta">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        
+        
+        
+        <!--PRODUCTO-->
+        <action path="/LoadProductoJson" type="com.iammagis.sga.administracion.productos.LoadProductoJson"/>
+        <action name="Producto" path="/EditProducto" type="com.iammagis.sga.administracion.productos.EditProducto"/>
+        <action path="/DeleteProducto" type="com.iammagis.sga.administracion.productos.DeleteProducto"/>
+        <action name="Producto" path="/CreateProducto" type="com.iammagis.sga.administracion.productos.CreateProducto"/>
+        <action name="Producto" path="/MasivaProductos" type="com.iammagis.sga.administracion.productos.MasivaProductos"/>
+        <action path="/LoadProductos" type="com.iammagis.sga.administracion.productos.LoadProductos">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        
+        <!--FABRICANTE-->
+        <action path="/LoadFabricanteJson" type="com.iammagis.sga.mongo.fabricante.LoadFabricanteJson"/>
+        <action name="Fabricante" path="/EditFabricante" type="com.iammagis.sga.mongo.fabricante.EditFabricante"/>
+        <action path="/DeleteFabricante" type="com.iammagis.sga.mongo.fabricante.DeleteFabricante"/>
+        <action name="Fabricante" path="/CreateFabricante" type="com.iammagis.sga.mongo.fabricante.CreateFabricante"/>
+        <action name="Fabricante" path="/MasivaFabricantes" type="com.iammagis.sga.mongo.fabricante.MasivaFabricantes"/>
+        <action path="/LoadFabricantes" type="com.iammagis.sga.mongo.fabricante.LoadFabricantes">
+            <forward name="success" path="/systema.jsp"/> 
+        </action> 
+        
+        <!--PEDIDOS-->
+        <action path="/LoadPedidos" type="com.iammagis.sga.operacion.pedidos.LoadPedidos">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadInterval" type="com.iammagis.sga.administracion.usuario.LoadInterval"/>
+        <action path="/EliminarPago" type="com.iammagis.sga.reporte.estadocuenta.EliminarPago"/>
+        <action path="/LoadHistorialPagosEmpresa" type="com.iammagis.sga.reporte.estadocuenta.LoadHistorialPagosEmpresa"/>
+        <action name="Pago" path="/CreatePagoEmpresa" type="com.iammagis.sga.reporte.estadocuenta.CreatePagoEmpresa"/>
+        
+        <!--MAPA-->
+        <action path="/LoadMapa" type="com.iammagis.sga.reporte.mapa.LoadMapa">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadHistorialVendedor" type="com.iammagis.sga.mongo.mobile.LoadHistorialVendedor"/>
+        <action path="/LoadHistorialClientesMobile" type="com.iammagis.sga.mongo.mobile.LoadHistorialClientesMobile"/>
+        <action path="/LoadMapaCalorPedidos" type="com.iammagis.sga.reporte.mapa.LoadMapaCalorPedidos"/>
+        <action path="/LoadMapaCalorVendedores" type="com.iammagis.sga.reporte.mapa.LoadMapaCalorVendedores"/>
+        
+        <!--PEDIDOS-->
+        <action name="Pedido" path="/EmpacarPedido" type="com.iammagis.sga.operacion.pedidos.EmpacarPedido"/>
+        <action name="Pedido" path="/DespacharPedido" type="com.iammagis.sga.operacion.pedidos.DespacharPedido"/>
+        <action path="/DeletePedido" type="com.iammagis.sga.operacion.pedidos.DeletePedido"/>
+        <action path="/LoadPedidoJson" type="com.iammagis.sga.operacion.pedidos.LoadPedidoJson"/>
+        <action name="Pedido" path="/EditPedido" type="com.iammagis.sga.operacion.pedidos.EditPedido"/>
+        <action name="Pedido" path="/CreatePedido" type="com.iammagis.sga.operacion.pedidos.CreatePedido"/>
+        
+        <!--POSICIONES-->
+        <action path="/LoadPosiciones" type="com.iammagis.sga.reporte.mapa.LoadPosiciones"/>
+        <action path="/SavePosition" type="com.iammagis.sga.mongo.mobile.SavePosition"/>
+        
+        <!--MOBILE SERVICES-->
+        <action path="/LoadPedidosMobile" type="com.iammagis.sga.mongo.mobile.LoadPedidosMobile"/>
+        <action path="/LogOutMobile" type="com.iammagis.sga.mongo.mobile.LogOutMobile"/> 
+        <action path="/LoadClientesMobile" type="com.iammagis.sga.mongo.mobile.LoadClientesMobile"/>
+        <action path="/LoadProductosMobile" type="com.iammagis.sga.mongo.mobile.LoadProductosMobile"/>
+        <action path="/CreateClienteMobile" type="com.iammagis.sga.mongo.mobile.CreateClienteMobile"/>
+        <action path="/CreatePedidoMobile" type="com.iammagis.sga.mongo.mobile.CreatePedidoMobile"/>
+        <action path="/SendPush" type="com.iammagis.sga.mongo.mobile.SendPush"/>
+        <action path="/LoadRuta" type="com.iammagis.sga.mongo.mobile.LoadRuta"/>
+        <action path="/LoadPaquetesRuta" type="com.iammagis.sga.mongo.mobile.LoadPaquetesRuta"/>
+        <action path="/ChangeStateRuta" type="com.iammagis.sga.mongo.mobile.ChangeStateRuta"/>
+        <action path="/ChangeStatePaquete" type="com.iammagis.sga.mongo.mobile.ChangeStatePaquete"/>
+        <action path="/SaveComentario" type="com.iammagis.sga.mongo.mobile.SaveComentario"/> 
+        <action path="/LoginMobile" type="com.iammagis.sga.mongo.mobile.LoginMobile"/>
+        <action path="/UploadMultipleServiceImage" type="com.iammagis.sga.mobile.UploadMultipleServiceImage"/>
+        
+        <!--MOBILE IOT SERVICE-->
+        
+        <action path="/LoadTiposAlarmasDispositivoIOT" type="com.iammagis.sga.mongo.mobile.iot.LoadTiposAlarmasDispositivoIOT"/>
+        <action path="/LoadTiposIOT" type="com.iammagis.sga.mongo.mobile.iot.LoadTiposIOT"/>
+        <action path="/LoadIOTAlarmas" type="com.iammagis.sga.mongo.mobile.iot.LoadIOTAlarmas"/>
+        <action path="/LoadIOTDevices" type="com.iammagis.sga.mongo.mobile.iot.LoadIOTDevices"/>
+        <action path="/LoadIOTDeviceRegister" type="com.iammagis.sga.mongo.mobile.iot.LoadIOTDeviceRegister"/>
+        <action path="/SearchIOTReport" type="com.iammagis.sga.mongo.mobile.iot.SearchIOTReport"/> 
+        <action path="/RegisterIOTDevice" type="com.iammagis.sga.mongo.mobile.iot.RegisterIOTDevice"/>
+        <action path="/RemoveIOTDevice" type="com.iammagis.sga.mongo.mobile.iot.RemoveIOTDevice"/>
+        <action path="/RegisterIOTAlarm" type="com.iammagis.sga.mongo.mobile.iot.RegisterIOTAlarm"/>
+        <action path="/RemoveIOTAlarm" type="com.iammagis.sga.mongo.mobile.iot.RemoveIOTAlarm"/>
+        
+        
+        
+        
+        
+        
+        <!--HISTORIAL CLIENTE-->
+        <action path="/LoadHistorialPorCliente" type="com.iammagis.sga.operacion.historialcliente.LoadHistorialPorCliente">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadHistorialClienteJson" type="com.iammagis.sga.operacion.historialcliente.LoadHistorialClienteJson"/>
+        <!--HISORIAL VENdedor-->
+        <action path="/LoadHistorialPorVendedor" type="com.iammagis.sga.operacion.historialvendedor.LoadHistorialPorVendedor">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadHistorialVendedorJson" type="com.iammagis.sga.operacion.historialvendedor.LoadHistorialVendedorJson"/>
+        <!--INDICADORES-->
+        <action path="/LoadIndicadores" type="com.iammagis.sga.reporte.indicadores.LoadIndicadores">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/ResultadoIndicadores" type="com.iammagis.sga.reporte.indicadores.ResultadoIndicadores"/>
+        
+        
+        <action path="/ImprimirPedidoID" type="com.iammagis.sga.operacion.pedidos.ImprimirPedidoID"/>
+        <action path="/SavePedidoMobile" type="com.iammagis.sga.mongo.mobile.SavePedidoMobile"/>
+        
+        <!--PEDIDOS ELIMINADOS-->
+        <action path="/LoadPedidosEliminados" type="com.iammagis.sga.operacion.pedidos.eliminados.LoadPedidosEliminados">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <!--CLIENTES PENDIENTES APROBACION-->
+        <action path="/LoadEmpresasPendientes" type="com.iammagis.sga.operacion.empresa.pendientes.LoadEmpresasPendientes">
+            <forward name="success" path="/systema.jsp"/> 
+        </action> 
+        <action path="/AprobarCliente" type="com.iammagis.sga.operacion.empresa.pendientes.AprobarCliente"/>
+        <!--HISTORIAL POR PEDIDO-->
+        <action path="/LoadHistorialPorPedido" type="com.iammagis.sga.operacion.historialpedido.LoadHistorialPorPedido">
+            <forward name="success" path="/systema.jsp"/> 
+        </action> 
+        <action path="/LoadHistorialPedidoJson" type="com.iammagis.sga.operacion.historialpedido.LoadHistorialPedidoJson"/>
+        <!--RECORRIDO HISTORICO-->
+        <action path="/LoadRecorridoHistorico" type="com.iammagis.sga.reporte.recorridohistorico.LoadRecorridoHistorico">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/LoadRecorridoHistoricoJson" type="com.iammagis.sga.reporte.recorridohistorico.LoadRecorridoHistoricoJson"/>
+        
+        <!--API INTERFER-->
+        <action path="/SyncInterFer" type="com.iammagis.sga.api.SyncInterFer"/> 
+        
+        <!--ASIGNACION MODULOS EMPRESAS-->
+        <action path="/LoadSubmodulosEmpresas" type="com.iammagis.sga.administracion.asignacionmodulosempresas.LoadSubmodulosEmpresas">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/SaveSubmodulosEmpresa" type="com.iammagis.sga.administracion.asignacionmodulosempresas.SaveSubmodulosEmpresa"/>
+        <action path="/LoadSubmodulosEmpresaJson" type="com.iammagis.sga.administracion.asignacionmodulosempresas.LoadSubmodulosEmpresaJson"/>
+          
+        <!--IOT DEVICES-->
+        <action path="/LoadDispositivosIot" type="com.iammagis.sga.iot.dispositivos.LoadDispositivosIot">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/DeleteDeviceIOT" type="com.iammagis.sga.iot.dispositivos.DeleteDeviceIOT"/>
+        <action path="/LoadDeviceIOTJson" type="com.iammagis.sga.iot.dispositivos.LoadDeviceIOTJson"/>
+        <action name="IOTDevice" path="/EditDeviceIOT" type="com.iammagis.sga.iot.dispositivos.EditDeviceIOT"/>
+        <action name="IOTDevice" path="/CreateDeviceIOT" type="com.iammagis.sga.iot.dispositivos.CreateDeviceIOT"/>
+        <action path="/SendDataIOTDevice" type="com.iammagis.sga.iot.SendDataIOTDevice"/>
+        <!--IOT REPORTES-->
+        <action path="/LoadReportesIot" type="com.iammagis.sga.iot.reportes.LoadReportesIot">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/BuscarIotReporte" type="com.iammagis.sga.iot.reportes.BuscarIotReporte"/>
+        <!--IOT TABLERO DE CONTROL-->
+        <action path="/LoadTableroIot" type="com.iammagis.sga.iot.tablero.LoadTableroIot">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/BuscarTableroIot" type="com.iammagis.sga.iot.tablero.BuscarTableroIot"/>
+        <!--IOT ALARMAS-->
+        <action path="/LoadAlarmasIot" type="com.iammagis.sga.iot.alarmas.LoadAlarmasIot">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action name="IOTDeviceAlarma" path="/EditAlarmaIot" type="com.iammagis.sga.iot.alarmas.EditAlarmaIot"/>
+        <action path="/LoadAlarmaIot" type="com.iammagis.sga.iot.alarmas.LoadAlarmaIot"/>
+        <action path="/DeleteAlarmaIot" type="com.iammagis.sga.iot.alarmas.DeleteAlarmaIot"/>
+        <action name="IOTDeviceAlarma" path="/CreateAlarmaIot" type="com.iammagis.sga.iot.alarmas.CreateAlarmaIot"/>
+        <!--LOG DE ACTIVIDADES-->
+        <action path="/LoadLogActividades" type="com.iammagis.sga.administracion.logactividades.LoadLogActividades">
+            <forward name="success" path="/systema.jsp"/> 
+        </action>
+        <action path="/BuscarLogActividades" type="com.iammagis.sga.administracion.logactividades.BuscarLogActividades"/>
+         
+        <!--Testing-->
+        <action path="/TestingSendmail" type="com.iammagis.sga.iot.TestingSendmail"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/iammagis/sga/resources"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

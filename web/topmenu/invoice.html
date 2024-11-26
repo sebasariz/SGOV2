@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>Quantum Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+	
+  	<!-- Icon Set -->
+  	<link href="../css/icon.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Animate Css -->
+    <link href="../css/animate.min.css" rel="stylesheet">
+
+    <!-- Animsition -->
+    <link href="../css/animsition.min.css" rel="stylesheet">
+
+  	<!-- Core css -->
+  	<link href="../css/app.min.css" rel="stylesheet" class="core-css">
+  </head>
+
+	<body>
+    
+    <!-- wrapper -->
+		<div class="wrapper animsition nav-top has-footer">
+
+      <!-- Start Header -->
+      <header class="header-top navbar header-dark hidden-print">
+        <div class="top-bar">
+          <div class="container">
+            <div class="main-search">
+              <div class="input-wrap">
+                <input class="form-control" type="text" placeholder="Search Here...">
+                <a href="#"><i class="icon-search"></i></a>
+              </div>
+              <span class="close-search search-toggle">Cancel</span>
+            </div>
+          </div>
+        </div><!-- /.container -->
+
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle top-menu-toggle collapsed" data-toggle="collapse" data-target="#topNavbarCollapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand text-upper" href="index.html">Quan<span class="text-main">tum</span></a>
+
+            <ul class="nav navbar-nav-xs">
+              <li>
+                <a href="#" class="font-lg collapse" data-toggle="collapse" data-target="#headerNavbarCollapse">
+                  <i class="icon-user move-d-1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="search-toggle">
+                  <i class="fa fa-search"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="toggle-right-sidebar">
+                  <i class="icon-menu2"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="headerNavbarCollapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="font-lg dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon-envelop font-12-xs"></i><div class="new-alert active"></div>
+                  <span class="hidden-sm hidden-md hidden-lg font-12 m-l-5">Messages</span>
+                </a>
+                <ul class="dropdown-menu dropdown-animated pop-effect dropdown-lg list-group-dropdown">
+                  <li class="no-link font-12">You have 4 new unread messages</li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic profile-icon"><i class="icon-file-zip"></i></div>
+                        <div class="detail">
+                          <span class="text-normal">Ricky Palmer</span>
+                          <span class="time">3 hrs ago</span>
+                          <p class="font-11 no-m-b text-overflow">Sent you a file</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic profile-icon"><i class="icon-bubbles2"></i></div>
+                        <div class="detail">
+                          <span class="text-normal">Charles Dockery</span>
+                          <span class="time">Jun 03, 2015</span>
+                          <p class="font-11 no-m-b text-overflow">Sent you a message</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic profile-icon"><i class="icon-coin-dollar"></i></div>
+                        <div class="detail">
+                          <span class="text-normal">Kimberly Crouch</span>
+                          <span class="time">May 17, 2015</span>
+                          <p class="font-11 no-m-b text-overflow">Purchased your item</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li><a href="#" class="text-center">See all</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle font-lg" data-toggle="dropdown">
+                  <i class="icon-user font-12-xs"></i>
+                  <span class="badge bg-danger">3</span>
+                  <span class="hidden-sm hidden-md hidden-lg font-12 m-l-5">New Account</span>
+                </a>
+                <ul class="dropdown-menu dropdown-animated pop-effect dropdown-lg list-group-dropdown">
+                  <li class="no-link font-12">You have 5 new notifications</li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic"><img src="../img/profile2.jpg" alt=""></div>
+                        <div class="detail">
+                          <span class="text-normal">Carrie Orr</span>
+                          <span class="time">2 mins ago</span>
+                          <p class="font-11 no-m-b text-overflow">Start following you</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic"><img src="../img/profile3.jpg" alt=""></div>
+                        <div class="detail">
+                          <span class="text-normal">James Wygant</span>
+                          <span class="time">1 hr ago</span>
+                          <p class="font-11 no-m-b text-overflow">Accepted your friend request</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic"><img src="../img/profile4.jpg" alt=""></div>
+                        <div class="detail">
+                          <span class="text-normal">Mary Cormier</span>
+                          <span class="time">yesterday</span>
+                          <p class="font-11 no-m-b text-overflow">Sent you a friend request</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="user-list-wrap">
+                        <div class="profile-pic"><img src="../img/profile5.jpg" alt=""></div>
+                        <div class="detail">
+                          <span class="text-normal">Erica Conley</span>
+                          <span class="time">2 days ago</span>
+                          <p class="font-11 no-m-b text-overflow">Start following you</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li><a href="#" class="text-center">See all</a></li>
+                </ul>
+              </li>
+              <li class="dropdown dropdown-full hidden-sm">
+                <a href="#" data-toggle="dropdown">Mega</a>
+                <div class="dropdown-menu clickable-dropdown dropdown-animated fade-effect">
+                  <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                      <div class="text-upper">Navagation</div>
+                      <div class="row m-t-10 font-12">
+                        <div class="col-sm-6">
+                          <ul class="list-unstyled line-2x link-unstyled-wrap">
+                            <li><a href="index.html">Dashboard <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="ui_element.html">Component <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="form_element.html">Form <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="inbox.html">Email <span class="m-d-1">&raquo;</span></a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-6">
+                          <ul class="list-unstyled line-2x link-unstyled-wrap">
+                            <li><a href="profile.html">Profile <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="task.html">Tasks <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="gallery.html">Gallery <span class="m-d-1">&raquo;</span></a></li>
+                            <li><a href="calendar.html">Calendar <span class="m-d-1">&raquo;</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 b-all b-lr line-dashed m-t-15-xs">
+                      Get Start with a 7 days free trial
+
+                      <div class="row m-t-15">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Name">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Email">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Confirm Password">
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="line-dashed">
+
+                      <p class="font-12 text-muted">We do not sell or share your personal information with anyone else without your explicit consent.</p>
+
+                      <div class="text-right m-t-20"><button class="btn btn-main" type="button">Start My Trial</button></div>
+                    </div>
+                    <div class="col-sm-4 m-t-15-xs">
+                      <ul class="list-unstyled list-icons line-2x text-muted font-12">
+                        <li><span class="list-icon"><i class="icon-checkmark m-d-1 text-green"></i></span>Cancel anytime</li>
+                        <li><span class="list-icon"><i class="icon-checkmark m-d-1 text-green"></i></span>No credit card required</li>
+                        <li><span class="list-icon"><i class="icon-checkmark m-d-1 text-green"></i></span>Free support</li>
+                      </ul>
+
+                      <hr class="line-dashed">
+                      <p class="text-muted font-12 font-italic">Already have an account? <a href="#">Login</a></p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown hidden-sm">
+                <a href="../../frontend/index.html" class="animsition-link">Front End</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="main-search hidden-xs">
+                <div class="input-wrap">
+                  <input class="form-control" type="text" placeholder="Search Here...">
+                  <a href="#"><i class="icon-search"></i></a>
+                </div>
+              </li>
+              <li class="user-profile dropdown">
+                <a href="#" class="clearfix dropdown-toggle" data-toggle="dropdown">
+                  <img src="../img/profile1.jpg" alt="" class="hidden-sm">
+                  <div class="user-name">John Doe <span class="caret m-l-5"></span></div>
+                </a>
+                <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
+                  <li><a href="#">My Profile</a></li>
+                  <li><a href="#">My Tasks</a></li>
+                  <li><a href="#">Inbox</a></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+              </li>
+              <li class="hidden-xs">
+                <a href="#" class="font-lg toggle-right-sidebar"><i class="icon-menu2 m-d-1"></i></a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+      </header>
+      <!-- End Header -->
+
+      <!-- Start top Navigation -->
+      <div class="top-navigation hidden-print">
+        <div class="container">
+          <div class="top-navigation-inner">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="topNavbarCollapse">
+              <ul class="nav navbar-nav magic-nav">
+                <li><a href="index.html" class="animsition-link"><i class="icon-stats-dots"></i>Dashboard</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-stack"></i>Components</a>
+                  <ul class="dropdown-menu dropdown-animated fade-effect">
+                    <li><a href="ui_element.html" class="animsition-link">Basic Elements</a></li>
+                    <li><a href="button.html" class="animsition-link">Buttons</a></li>
+                    <li><a href="static_table.html" class="animsition-link">Static Table</a></li>
+                    <li><a href="datatable.html" class="animsition-link">Datatable</a></li>
+                    <li><a href="panel.html" class="animsition-link">Panels</a></li>
+                    <li><a href="modal.html" class="animsition-link">Modals</a></li>
+                    <li><a href="navs.html" class="animsition-link">Navs</a></li>
+                    <li><a href="calendar.html" class="animsition-link">Calendar</a></li>
+                    <li><a href="widget.html" class="animsition-link">Widget</a></li>
+                  </ul>
+                </li>
+                <li><a href="form_element.html" class="animsition-link"><i class="icon-file-text2"></i>Form</a></li>
+                <li><a href="inbox.html" class="animsition-link"><i class="icon-envelop"></i>Email</a></li>
+                <li class="dropdown active">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-files-empty"></i>Extra Pages</a>
+                  <ul class="dropdown-menu dropdown-animated fade-effect">
+                    <li><a href="blank.html" class="animsition-link">Blank</a></li>
+                    <li><a href="app_layout.html" class="animsition-link">App Layout</a></li>
+                    <li><a href="login.html" class="animsition-link">Login</a></li>
+                    <li><a href="register.html" class="animsition-link">Register</a></li>
+                    <li><a href="404.html" class="animsition-link">Error 404</a></li>
+                    <li><a href="500.html" class="animsition-link">Error 500</a></li>
+                    <li><a href="search_result.html" class="animsition-link">Search Result</a></li>
+                    <li><a href="profile.html" class="animsition-link">User Profile</a></li>
+                    <li><a href="chat.html" class="animsition-link">Chat</a></li>
+                    <li><a href="gallery.html" class="animsition-link">Gallery</a></li>
+                    <li><a href="task.html" class="animsition-link">Task</a></li>
+                    <li><a href="timeline.html" class="animsition-link">Timeline</a></li>
+                    <li class="active"><a href="invoice.html" class="animsition-link">Invoice</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#themeSettingModal" data-toggle="modal"><small><i class="animated theme-setting icon-cog"></i></small> Setting</a></li>
+                <li class="dropdown"><a href="login.html" class="animsition-link">Logout</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div>
+        </div><!-- /.container -->
+      </div>
+      <!-- End top Navigation -->
+
+      <!-- Start Right Sidebar -->
+      <aside class="right-sidebar-wrap sidebar-fixed hidden-print">
+        <ul class="sidebar-tab list-unstyled clearfix font-header font-11 bg-main">
+          <li class="active"><a href="#sideChatTab" data-toggle="tab" class="text-muted">Chat</a></li>
+          <li><a href="#sideTaskTab" data-toggle="tab" class="text-muted">Tasks</a></li>
+          <li><a href="#sideAlertTab" data-toggle="tab" class="text-muted">Alerts</a></li>
+        </ul>
+        <div class="sidenav-inner">
+          <div class="tab-content">
+            <div class="tab-pane fade active in" id="sideChatTab">
+              <ul class="chat-friend-list list-unstyled">
+                <li>
+                  <div class="profile-pic">
+                    <img src="../img/profile11.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">21 mins ago</span>
+                    <div class="chat-name font-semi-bold font-12">Larry McCabe</div>
+                  </div>
+                  <div class="chat-preview">
+                    <span class="badge badge-danger">2</span>
+                    <p class="font-12">Behind the device dictates a loyal harden.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile9.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">1 hr ago</span>
+                    <div class="chat-name font-semi-bold font-12">Harris Wilson</div>
+                  </div>
+                  <div class="chat-preview">
+                    <span class="badge badge-danger">5</span>
+                    <p class="font-12">A rectangle accelerates the filter. A dry courtesy advances an apart conjecture.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile8.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">1 hr ago</span>
+                    <div class="chat-name font-semi-bold font-12">Elvin Cueva</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">The bullet couples a pursuing worry before the litter. A flesh rewrites a striking scanner before the peasant.</p>
+                  </div>
+                </li>
+                <li class="away">
+                  <div class="profile-pic">
+                    <img src="../img/profile7.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">3 hr ago</span>
+                    <div class="chat-name font-semi-bold font-12">Katie Calhoun</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">A wrap asserts a flashing asterisk.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile6.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">11 hr ago</span>
+                    <div class="chat-name font-semi-bold font-12">Joseph Edwards</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">The creature waffles near the violent conservative.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile5.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">Yesterday</span>
+                    <div class="chat-name font-semi-bold font-12">Lelah Wilburn</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">A stare shines past another bull! A subjective candidate declines without the envelope.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile-pic">
+                    <img src="../img/profile4.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">3 days ago</span>
+                    <div class="chat-name font-semi-bold font-12">Felicia Clancy</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">The stereotype rewards an evil.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile3.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">Feb 15</span>
+                    <div class="chat-name font-semi-bold font-12">Jonathan Zapata</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">A wrap asserts a flashing asterisk.</p>
+                  </div>
+                </li>
+                <li class="online">
+                  <div class="profile-pic">
+                    <img src="../img/profile2.jpg" class="img-circle" alt="">
+                  </div>
+                  <div class="chat-heading">
+                    <span class="chat-time">Feb 13</span>
+                    <div class="chat-name font-semi-bold font-12">Emily Rodriguez</div>
+                  </div>
+                  <div class="chat-preview">
+                    <p class="font-12">A wrap asserts a flashing asterisk.</p>
+                  </div>
+                </li>
+              </ul>
+            </div><!-- /.tab-pane -->
+
+            <div class="tab-pane fade" id="sideTaskTab">
+              <div class="list-group font-12">
+                <a href="task.html" class="list-group-item">
+                  UX/UI Design
+                  <div class="progress progress-striped progress-sm active m-t-5 no-m">
+                    <div class="progress-bar progress-bar-success" style="width: 60%;"></div>
+                  </div>
+                </a>
+                <a href="task.html" class="list-group-item">
+                  Wordpress Integration
+                  <div class="progress progress-striped progress-sm active m-t-5 no-m">
+                    <div class="progress-bar progress-bar-danger" style="width: 10%;"></div>
+                  </div>
+                </a>
+                <a href="task.html" class="list-group-item">
+                  Bootstrap Application
+                  <span class="pull-right">17/20</span>
+                </a>
+                <a href="task.html" class="list-group-item">
+                  Mobile Development
+                  <span class="badge badge-info">31</span>
+                </a>
+              </div>
+            </div><!-- /.tab-pane -->
+            <div class="tab-pane fade" id="sideAlertTab">
+              <div class="content-wrap">
+                <div class="alert alert-warning alert-dismissible font-12 m-b-10" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  Meeting at 10:00 AM
+                </div>
+
+                <div class="alert alert-warning alert-dismissible font-12 has-icon m-b-10" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  <i class="icon-info alert-icon"></i> New campaign will end in 1 hour
+                </div>
+
+                <div class="alert alert-warning alert-dismissible font-12 m-b-10" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  <strong>2:30 PM</strong>, Start a new Project.
+                </div>
+              </div>
+            </div><!-- /.tab-pane -->
+          </div><!-- /.tab-content -->
+        </div>
+      </aside>
+      <!-- End Right Sidebar -->
+
+      <!-- Start Second Level Right Sidebar -->
+      <div class="right-sidebar-second-level hidden-print">
+        <div class="sidebar-header bg-main font-12 font-header">
+          <span class="text-white">Larry Mccabe</span>
+          <button type="button" class="close h4 no-m">&times;</button>
+        </div>
+        <div class="chat-inner">
+          <div class="chat-items font-12">
+            <div class="chat-item">
+              <div class="profile-pic"><img src="../img/profile9.jpg" alt="" class="img-circle"></div>
+              <div class="chat-content">
+                <div class="chat-bubble">Hello, How are you?</div>
+                <div class="font-10 text-muted chat-sent">09:42 AM <i class="icon-checkmark text-success m-d-1"></i></div>
+              </div>
+            </div>
+            <div class="chat-item right chat-main">
+              <div class="profile-pic"><img src="../img/profile1.jpg" alt="" class="img-circle"></div>
+              <div class="chat-content">
+                <div class="chat-bubble">I'm good thanks, How are you doing?</div>
+                <div class="font-10 text-muted chat-sent">09:45 AM <i class="icon-checkmark text-success m-d-1"></i></div>
+              </div>
+            </div>
+            <div class="chat-item">
+              <div class="profile-pic"><img src="../img/profile9.jpg" alt="" class="img-circle"></div>
+              <div class="chat-content">
+                <div class="chat-bubble">The robot halves its vice house without the witch</div>
+                <div class="font-10 text-muted chat-sent">09:46 AM <i class="icon-checkmark text-success m-d-1"></i></div>
+              </div>
+            </div>
+            <div class="chat-item right chat-main">
+              <div class="profile-pic"><img src="../img/profile1.jpg" alt="" class="img-circle"></div>
+              <div class="chat-content">
+                <div class="chat-bubble">The hash detects the dirt underneath the squared author.</div>
+                <div class="font-10 text-muted chat-sent">09:46 AM <i class="icon-checkmark text-success m-d-1"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-footer">
+          <div class="row">
+            <div class="col-xs-9 no-p-r">
+              <input type="text" class="form-control input-sm">
+            </div>
+            <div class="col-xs-3">
+              <span class="text-muted text-action m-t-5 m-r-5 inline-block"><i class="icon-attachment"></i></span>
+              <span class="text-muted text-action m-t-5 inline-block"><i class="icon-user-plus"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Second Level Right Sidebar -->
+
+      <!-- Start Main Container -->
+      <div class="main-container">
+        <div class="container">
+          <div class="invoice-wrap m-t-20">
+            <div class="invoice-header">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="logo-thumbnail font-header pull-left m-r-10">Q</div>
+                  <div class="pull-left">
+                    <h2 class="font-header no-m">Quantum</h2>
+                    <div class="font-12 text-muted m-l-5">Website Design</div>
+                  </div>
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+            </div>
+
+            <div class="invoice-body">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3 class="font-header no-m">Total: <span class="font-semi-bold text-main">$10,700</span></h3>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <hr class="m-t-5 m-b-5">
+                    </div>
+                  </div>
+                  <div class="m-l-5">Invoice 0001</div>
+                  <div class="font-12 text-muted m-l-5">03 Sep, 2015</div>
+                </div>
+                <div class="col-xs-6">
+                  <address class="text-right"> 
+                    <strong>Twitter, Inc.</strong><br> 
+                    795 Folsom Ave, Suite 600<br> 
+                    San Francisco, CA 94107<br> 
+                    <abbr title="Phone">P:</abbr> (123) 456-7890 
+                  </address>
+                </div>
+              </div>
+
+              <hr class="line-dashed">
+
+              <div class="panel panel-default m-t-30">
+                <div class="table-responsive">
+                  <table class="table table-striped table-gray">
+                    <thead>
+                      <tr>
+                        <th>Description</th>
+                        <th class="text-center">Unit Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="font-semi-bold">Website Design</div>
+                          <div class="text-muted">
+                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh,<br/>viverra a dui a, gravida varius velit.</small>
+                          </div>
+                        </td>
+                        <td class="text-center">$1,200</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">$1,200</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="font-semi-bold">Website Development</div>
+                          <div class="text-muted">
+                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh,<br/>viverra a dui a, gravida varius velit.</small>
+                          </div>
+                        </td>
+                        <td class="text-center">$2,800</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">$2,800</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="font-semi-bold">Mobile Application</div>
+                          <div class="text-muted">
+                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh,<br/>viverra a dui a, gravida varius velit.</small>
+                          </div>
+                        </td>
+                        <td class="text-center">$2,500</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">$5,000</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="font-semi-bold">Search Engine Optimization</div>
+                          <div class="text-muted">
+                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh,<br/>viverra a dui a, gravida varius velit.</small>
+                          </div>
+                        </td>
+                        <td class="text-center">$1,000</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">$1,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><!-- /.table-responsive -->
+              </div><!-- /.panel -->
+
+              <div class="row">
+                <div class="col-xs-9">
+                  <div class="m-l-10">
+                    <h4 class="no-m font-semi-bold m-t-10">Thank you for your business</h4>
+                    <div class="m-t-10">If you have any question, please contact us via <a href="#">our support site</a></div>
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div class="row m-t-10">
+                    <div class="col-xs-6">
+                      Subtotal:
+                    </div>
+                    <div class="col-xs-6">
+                      $10,000
+                    </div>
+                  </div><!-- /.row -->
+                  <div class="row m-t-10">
+                    <div class="col-xs-6">
+                      Vat:
+                    </div>
+                    <div class="col-xs-6">
+                      $700
+                    </div>
+                  </div><!-- /.row -->
+                  <hr class="m-t-5 m-b-5">
+                  <div class="row m-t-10 h4 font-semi-bold">
+                    <div class="col-xs-6">
+                      Total:
+                    </div>
+                    <div class="col-xs-6">
+                      $10,700
+                    </div>
+                  </div><!-- /.row -->
+                </div>
+              </div><!-- /.row -->
+
+              <div class="text-right m-t-40 hidden-print">
+                <button type="button" class="btn btn-main" id="printInvoice">Print</button>
+                <button type="button" class="btn btn-orange">Proceed to Payment</button>
+              </div>
+            </div><!-- /.invoice-body -->
+          </div>
+        </div><!-- /.container -->
+      </div>
+      <!-- End Main Container -->
+
+      <!-- Start Footer -->
+      <footer class="footer hidden-print">
+        <div class="container">
+          &copy; 2015. <b>Quantum Admin</b> by <b>Endless Theme</b>
+        </div>
+      </footer>
+      <!-- End Footer -->
+
+      <!-- Start Modal -->
+
+      <div class="modal modal-scale fade" id="themeSettingModal">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title font-header text-dark">Theme Setting</h4>
+            </div>
+            <div class="modal-body">
+              <div class="font-12 text-upper">Primary Color</div>
+              <ul class="color-list list-unstyled m-t-10 clearfix primary-color">
+                <li><span class="bg-primary" data-color="#122b14" data-name="dark-blue"></span></li>
+                <li><span class="bg-info" data-color="#64d4e4" data-name="blue"></span></li>
+                <li><span class="bg-orange" data-color="#f18f68" data-name="orange"></span></li>
+                <li><span class="bg-purple" data-color="#9775cc" data-name="purple"></span></li>
+                <li><span class="bg-danger" data-color="#fd7a7b" data-name="red"></span></li>
+                <li><span class="bg-warning" data-color="#ffb038" data-name="yellow"></span></li>
+                <li><span class="bg-success" data-color="#56cf87" data-name="green"></span></li>
+              </ul>
+
+              <hr class="line-dashed">
+
+              <div class="font-12 text-upper m-b-5">Navigation</div>
+              <a href="../sidemenu/index.html" class="link-unstyled font-12 animsition-link">Side</a>
+              <a href="index.html" class="link-unstyled m-l-20 font-12 animsition-link">Top</a>
+
+              <hr class="line-dashed">
+
+              <div class="checkbox">
+                <div class="custom-checkbox font-12">
+                  <input type="checkbox" name="topnavFixed" id="topnavFixed"/>
+                  <label for="topnavFixed">Fixed Top Navigation</label>
+                </div>
+              </div>
+              <div class="checkbox">
+                <div class="custom-checkbox font-12">
+                  <input type="checkbox" name="fullWidthContainer" id="fullWidthContainer"/>
+                  <label for="fullWidthContainer">Full Width</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!-- End Modal -->
+    </div>
+    <!-- /.wrapper -->
+
+		<!-- Jquery -->
+  	<script src="../js/jquery-1.11.2.min.js"></script>
+  	
+    <!-- Bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+  	<!-- Modernizr -->
+    <script src="../js/modernizr.min.js"></script>
+
+    <!-- Slim Scroll -->
+    <script src="../js/jquery.slimscroll.min.js"></script>
+
+    <!-- Animsition -->
+    <script src="../js/jquery.animsition.min.js"></script>
+
+    <!-- App -->
+    <script src="../js/app.min.js"></script>
+
+    <script>
+      $(function()  {
+        $('#printInvoice').click(function() {
+          window.print();
+        });
+      });
+    </script>
+	</body>
+</html>
