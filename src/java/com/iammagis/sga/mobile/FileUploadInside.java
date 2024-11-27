@@ -1,10 +1,6 @@
 package com.iammagis.sga.mobile;
 
-import com.google.gson.Gson;
-import com.iammagis.sga.mongo.PaqueteMongoController;
-import com.iammagis.sga.mongo.beans.Paquete;
-import com.mongodb.DBObject;
-import com.mongodb.util.JSON;
+import com.google.gson.Gson; 
 import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
@@ -66,19 +62,11 @@ public class FileUploadInside extends HttpServlet {
                   fileName = System.currentTimeMillis() + "-" + URLDecoder.decode(item.getName());
                   fileName = this.stripAccents(fileName).replaceAll(" ", "").replaceAll("\\s", "");
                   gson = new Gson();
-                  PaqueteMongoController paqueteMongoController = new PaqueteMongoController();
-                  DBObject dBObject = paqueteMongoController.findPaqueteRuteo(id);
-                  Paquete paquete = (Paquete)gson.fromJson(JSON.serialize(dBObject), Paquete.class);
-                  JSONArray jSONArrayMultimedia = paquete.getjSONArray_multimedia();
-                  if (jSONArrayMultimedia == null) {
-                     jSONArrayMultimedia = new JSONArray();
-                  }
+                   
 
                   JSONObject jSONObject = new JSONObject();
                   jSONObject.put("archivo", (Object)fileName);
-                  jSONArrayMultimedia.put((Object)jSONObject);
-                  paquete.setjSONArray_multimedia(jSONArrayMultimedia);
-                  paqueteMongoController.editPaqueteRuteo(paquete);
+                  
                   File file = new File(directory, fileName);
                   file = new File(BASE_DIRECTORY, file.getPath());
                   File parentFile = file.getParentFile();
@@ -91,12 +79,8 @@ public class FileUploadInside extends HttpServlet {
                }
             }
 
-            PaqueteMongoController paqueteMongoController = new PaqueteMongoController();
-            DBObject dBObject = paqueteMongoController.findPaqueteRuteo(id);
+           
             gson = new Gson();
-            Paquete paquete = (Paquete)gson.fromJson(JSON.serialize(dBObject), Paquete.class);
-            JSONArray jSONArray = paquete.getjSONArray_multimedia();
-            jSONObjectResult.put("multimedia", (Object)jSONArray);
             jSONObjectResult.put("estado", (Object)"ok");
             response.setStatus(202);
          } catch (Exception var23) {

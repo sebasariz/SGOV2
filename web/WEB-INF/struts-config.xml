@@ -9,18 +9,8 @@
     <form-beans> 
         <form-bean name="Usuario" type="com.iammagis.sga.mongo.beans.Usuario"/> 
         <form-bean name="Empresa" type="com.iammagis.sga.mongo.beans.Empresa"/>
-        <form-bean name="Fabricante" type="com.iammagis.sga.mongo.beans.Fabricante"/>
-        <form-bean name="Pedido" type="com.iammagis.sga.mongo.beans.Pedido"/> 
-        <form-bean name="Producto" type="com.iammagis.sga.mongo.beans.Producto"/> 
-        <form-bean name="Pago" type="com.iammagis.sga.mongo.beans.Pago"/> 
-        <form-bean name="Deudor" type="com.iammagis.sga.mongo.beans.Deudor"/> 
         <form-bean name="IOTDevice" type="com.iammagis.sga.mongo.beans.IOTDevice"/> 
         <form-bean name="IOTDeviceAlarma" type="com.iammagis.sga.mongo.beans.IOTDeviceAlarma"/> 
-        <form-bean name="ServicioRiesgoInterno" type="com.iammagis.sga.mongo.beans.ServicioRiesgoInterno"/> 
-        <form-bean name="Paquete" type="com.iammagis.sga.mongo.beans.Paquete"/> 
-        <form-bean name="Geocerca" type="com.iammagis.sga.mongo.beans.Geocerca"/> 
-        <form-bean name="Direccion" type="com.iammagis.sga.mongo.beans.Direccion"/> 
-        <form-bean name="ArchivoDirecciones" type="com.iammagis.sga.mongo.beans.ArchivoDirecciones"/> 
     </form-beans>
     
     <global-exceptions>
@@ -89,70 +79,34 @@
         </action>
         
         
-        
-        <!--PRODUCTO-->
-        <action path="/LoadProductoJson" type="com.iammagis.sga.administracion.productos.LoadProductoJson"/>
-        <action name="Producto" path="/EditProducto" type="com.iammagis.sga.administracion.productos.EditProducto"/>
-        <action path="/DeleteProducto" type="com.iammagis.sga.administracion.productos.DeleteProducto"/>
-        <action name="Producto" path="/CreateProducto" type="com.iammagis.sga.administracion.productos.CreateProducto"/>
-        <action name="Producto" path="/MasivaProductos" type="com.iammagis.sga.administracion.productos.MasivaProductos"/>
-        <action path="/LoadProductos" type="com.iammagis.sga.administracion.productos.LoadProductos">
-            <forward name="success" path="/systema.jsp"/> 
-        </action>
-        
-        <!--FABRICANTE-->
-        <action path="/LoadFabricanteJson" type="com.iammagis.sga.mongo.fabricante.LoadFabricanteJson"/>
-        <action name="Fabricante" path="/EditFabricante" type="com.iammagis.sga.mongo.fabricante.EditFabricante"/>
-        <action path="/DeleteFabricante" type="com.iammagis.sga.mongo.fabricante.DeleteFabricante"/>
-        <action name="Fabricante" path="/CreateFabricante" type="com.iammagis.sga.mongo.fabricante.CreateFabricante"/>
-        <action name="Fabricante" path="/MasivaFabricantes" type="com.iammagis.sga.mongo.fabricante.MasivaFabricantes"/>
-        <action path="/LoadFabricantes" type="com.iammagis.sga.mongo.fabricante.LoadFabricantes">
-            <forward name="success" path="/systema.jsp"/> 
-        </action> 
-        
-        <!--PEDIDOS-->
-        <action path="/LoadPedidos" type="com.iammagis.sga.operacion.pedidos.LoadPedidos">
-            <forward name="success" path="/systema.jsp"/> 
-        </action>
-        <action path="/LoadInterval" type="com.iammagis.sga.administracion.usuario.LoadInterval"/>
-        <action path="/EliminarPago" type="com.iammagis.sga.reporte.estadocuenta.EliminarPago"/>
-        <action path="/LoadHistorialPagosEmpresa" type="com.iammagis.sga.reporte.estadocuenta.LoadHistorialPagosEmpresa"/>
-        <action name="Pago" path="/CreatePagoEmpresa" type="com.iammagis.sga.reporte.estadocuenta.CreatePagoEmpresa"/>
-        
+           
         <!--MAPA-->
         <action path="/LoadMapa" type="com.iammagis.sga.reporte.mapa.LoadMapa">
             <forward name="success" path="/systema.jsp"/> 
         </action>
-        <action path="/LoadHistorialVendedor" type="com.iammagis.sga.mongo.mobile.LoadHistorialVendedor"/>
-        <action path="/LoadHistorialClientesMobile" type="com.iammagis.sga.mongo.mobile.LoadHistorialClientesMobile"/>
+        
+        
         <action path="/LoadMapaCalorPedidos" type="com.iammagis.sga.reporte.mapa.LoadMapaCalorPedidos"/>
         <action path="/LoadMapaCalorVendedores" type="com.iammagis.sga.reporte.mapa.LoadMapaCalorVendedores"/>
         
-        <!--PEDIDOS-->
-        <action name="Pedido" path="/EmpacarPedido" type="com.iammagis.sga.operacion.pedidos.EmpacarPedido"/>
-        <action name="Pedido" path="/DespacharPedido" type="com.iammagis.sga.operacion.pedidos.DespacharPedido"/>
-        <action path="/DeletePedido" type="com.iammagis.sga.operacion.pedidos.DeletePedido"/>
-        <action path="/LoadPedidoJson" type="com.iammagis.sga.operacion.pedidos.LoadPedidoJson"/>
-        <action name="Pedido" path="/EditPedido" type="com.iammagis.sga.operacion.pedidos.EditPedido"/>
-        <action name="Pedido" path="/CreatePedido" type="com.iammagis.sga.operacion.pedidos.CreatePedido"/>
         
         <!--POSICIONES-->
         <action path="/LoadPosiciones" type="com.iammagis.sga.reporte.mapa.LoadPosiciones"/>
         <action path="/SavePosition" type="com.iammagis.sga.mongo.mobile.SavePosition"/>
         
         <!--MOBILE SERVICES-->
-        <action path="/LoadPedidosMobile" type="com.iammagis.sga.mongo.mobile.LoadPedidosMobile"/>
+        
         <action path="/LogOutMobile" type="com.iammagis.sga.mongo.mobile.LogOutMobile"/> 
-        <action path="/LoadClientesMobile" type="com.iammagis.sga.mongo.mobile.LoadClientesMobile"/>
-        <action path="/LoadProductosMobile" type="com.iammagis.sga.mongo.mobile.LoadProductosMobile"/>
+        
+        
         <action path="/CreateClienteMobile" type="com.iammagis.sga.mongo.mobile.CreateClienteMobile"/>
-        <action path="/CreatePedidoMobile" type="com.iammagis.sga.mongo.mobile.CreatePedidoMobile"/>
+        
         <action path="/SendPush" type="com.iammagis.sga.mongo.mobile.SendPush"/>
-        <action path="/LoadRuta" type="com.iammagis.sga.mongo.mobile.LoadRuta"/>
-        <action path="/LoadPaquetesRuta" type="com.iammagis.sga.mongo.mobile.LoadPaquetesRuta"/>
-        <action path="/ChangeStateRuta" type="com.iammagis.sga.mongo.mobile.ChangeStateRuta"/>
-        <action path="/ChangeStatePaquete" type="com.iammagis.sga.mongo.mobile.ChangeStatePaquete"/>
-        <action path="/SaveComentario" type="com.iammagis.sga.mongo.mobile.SaveComentario"/> 
+        
+        
+        
+        
+        
         <action path="/LoginMobile" type="com.iammagis.sga.mongo.mobile.LoginMobile"/>
         <action path="/UploadMultipleServiceImage" type="com.iammagis.sga.mobile.UploadMultipleServiceImage"/>
         
@@ -174,17 +128,7 @@
         
         
         
-        <!--HISTORIAL CLIENTE-->
-        <action path="/LoadHistorialPorCliente" type="com.iammagis.sga.operacion.historialcliente.LoadHistorialPorCliente">
-            <forward name="success" path="/systema.jsp"/> 
-        </action>
-        <action path="/LoadHistorialClienteJson" type="com.iammagis.sga.operacion.historialcliente.LoadHistorialClienteJson"/>
-        <!--HISORIAL VENdedor-->
-        <action path="/LoadHistorialPorVendedor" type="com.iammagis.sga.operacion.historialvendedor.LoadHistorialPorVendedor">
-            <forward name="success" path="/systema.jsp"/> 
-        </action>
-        <action path="/LoadHistorialVendedorJson" type="com.iammagis.sga.operacion.historialvendedor.LoadHistorialVendedorJson"/>
-        <!--INDICADORES-->
+         <!--INDICADORES-->
         <action path="/LoadIndicadores" type="com.iammagis.sga.reporte.indicadores.LoadIndicadores">
             <forward name="success" path="/systema.jsp"/> 
         </action>
@@ -192,30 +136,20 @@
         
         
         <action path="/ImprimirPedidoID" type="com.iammagis.sga.operacion.pedidos.ImprimirPedidoID"/>
-        <action path="/SavePedidoMobile" type="com.iammagis.sga.mongo.mobile.SavePedidoMobile"/>
         
-        <!--PEDIDOS ELIMINADOS-->
-        <action path="/LoadPedidosEliminados" type="com.iammagis.sga.operacion.pedidos.eliminados.LoadPedidosEliminados">
-            <forward name="success" path="/systema.jsp"/> 
-        </action>
+        
+        
         <!--CLIENTES PENDIENTES APROBACION-->
         <action path="/LoadEmpresasPendientes" type="com.iammagis.sga.operacion.empresa.pendientes.LoadEmpresasPendientes">
             <forward name="success" path="/systema.jsp"/> 
         </action> 
         <action path="/AprobarCliente" type="com.iammagis.sga.operacion.empresa.pendientes.AprobarCliente"/>
-        <!--HISTORIAL POR PEDIDO-->
-        <action path="/LoadHistorialPorPedido" type="com.iammagis.sga.operacion.historialpedido.LoadHistorialPorPedido">
-            <forward name="success" path="/systema.jsp"/> 
-        </action> 
-        <action path="/LoadHistorialPedidoJson" type="com.iammagis.sga.operacion.historialpedido.LoadHistorialPedidoJson"/>
-        <!--RECORRIDO HISTORICO-->
+          <!--RECORRIDO HISTORICO-->
         <action path="/LoadRecorridoHistorico" type="com.iammagis.sga.reporte.recorridohistorico.LoadRecorridoHistorico">
             <forward name="success" path="/systema.jsp"/> 
         </action>
         <action path="/LoadRecorridoHistoricoJson" type="com.iammagis.sga.reporte.recorridohistorico.LoadRecorridoHistoricoJson"/>
         
-        <!--API INTERFER-->
-        <action path="/SyncInterFer" type="com.iammagis.sga.api.SyncInterFer"/> 
         
         <!--ASIGNACION MODULOS EMPRESAS-->
         <action path="/LoadSubmodulosEmpresas" type="com.iammagis.sga.administracion.asignacionmodulosempresas.LoadSubmodulosEmpresas">

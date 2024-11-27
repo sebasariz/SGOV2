@@ -7,9 +7,7 @@ package com.iammagis.sga.administracion.usuario;
 
 
 import com.iammagis.sga.mongo.EmpresaMongoController;
-import com.iammagis.sga.mongo.IOTDeviceMongoController;
-import com.iammagis.sga.mongo.PedidoMongoController;
-import com.iammagis.sga.mongo.ProductoMongoController;
+import com.iammagis.sga.mongo.IOTDeviceMongoController; 
 import com.iammagis.sga.mongo.UsuarioMongoController;
 import com.iammagis.sga.mongo.beans.Empresa;
 import com.iammagis.sga.mongo.beans.IOTDevice;
@@ -71,18 +69,12 @@ public class LoadInicio extends org.apache.struts.action.Action {
             session.setAttribute("menu", menu);
             String content = "";
 
-            //cargamos los pedisos pendientes
-            PedidoMongoController pedidoMongoController = new PedidoMongoController();
-            List<DBObject> pedidos = pedidoMongoController.getPedidosPendientes(usuario);
-            request.setAttribute("pedidos", GetDynamicTable.getpedidos(pedidos, usuario));
+           
+ 
             //cargamos empresas clientes
             EmpresaMongoController empresaMongoController = new EmpresaMongoController();
             List<DBObject> dBObjects = empresaMongoController.getEmpresasByTipo(2);
-            request.setAttribute("empresas", dBObjects);
-
-            ProductoMongoController productoMongoController = new ProductoMongoController();
-            List<DBObject> dBObjectsProductos = productoMongoController.getproductosFromEmpresa(usuario);
-            request.setAttribute("productos", dBObjectsProductos);
+            request.setAttribute("empresas", dBObjects); 
             //1 root
             //2 Administrador
             //3 vendedor

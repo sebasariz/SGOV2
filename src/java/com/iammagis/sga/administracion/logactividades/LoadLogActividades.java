@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package com.iammagis.sga.administracion.logactividades;
-
-import com.iammagis.sga.mongo.ProductoMongoController;
-import com.iammagis.sga.mongo.beans.Usuario;
-import com.iammagis.sga.support.GetDynamicTable;
+ 
+import com.iammagis.sga.mongo.beans.Usuario; 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;

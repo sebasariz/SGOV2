@@ -2,9 +2,7 @@ package com.iammagis.sga.administracion.usuario;
 
 import com.google.gson.Gson;
 import com.iammagis.sga.mongo.EmpresaMongoController;
-import com.iammagis.sga.mongo.IOTDeviceMongoController;
-import com.iammagis.sga.mongo.PedidoMongoController;
-import com.iammagis.sga.mongo.ProductoMongoController;
+import com.iammagis.sga.mongo.IOTDeviceMongoController; 
 import com.iammagis.sga.mongo.UsuarioMongoController;
 import com.iammagis.sga.mongo.beans.Empresa;
 import com.iammagis.sga.mongo.beans.IOTDevice;
@@ -57,13 +55,7 @@ public class LoginUsuario extends Action {
                 session.setAttribute("usuario", usuario);
                 String menu = GetDynamicMenu.getMenu(usuario);
                 session.setAttribute("menu", menu);
-                String content = "";
-                PedidoMongoController pedidoMongoController = new PedidoMongoController();
-                List<DBObject> pedidos = pedidoMongoController.getPedidosPendientes(usuario);
-                request.setAttribute("pedidos", GetDynamicTable.getpedidos(pedidos, usuario));
-                ProductoMongoController productoMongoController = new ProductoMongoController();
-                List<DBObject> dBObjectsProductos = productoMongoController.getproductosFromEmpresa(usuario);
-                request.setAttribute("productos", dBObjectsProductos);
+                String content = ""; 
                 switch (usuario.getIdTipoUsuario()) {
                     case 1:
                         content = "/contenedor/root.jsp";

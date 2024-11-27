@@ -52,7 +52,7 @@ public class LoadMapaCalorPedidos extends org.apache.struts.action.Action {
         if (usuario != null) {
             long fechaIncio = Long.parseLong(request.getParameter("fechaInicio"));
             long fechaFin = Long.parseLong(request.getParameter("fechaFin")); 
-            jSONObject.put("posiciones", GetDynamicTable.getUsersPosicionesMapaCalorPedidos(usuario,fechaIncio,fechaFin));
+//            jSONObject.put("posiciones", GetDynamicTable.getUsersPosicionesMapaCalorPedidos(usuario,fechaIncio,fechaFin));
         } else {
             errores.add("register", new ActionMessage("erros.timepoSesion"));
             saveErrors(request, errores);

@@ -7,10 +7,7 @@ package com.iammagis.sga.reporte.mapa;
 
 
 import com.iammagis.sga.mongo.beans.Usuario;
-import com.iammagis.sga.support.GetDynamicTable;
-import com.mongodb.DBObject;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -54,8 +51,8 @@ public class LoadMapaCalorVendedores extends org.apache.struts.action.Action {
         if (usuario != null) { 
             long fechaIncio = Long.parseLong(request.getParameter("fechaInicio"));
             long fechaFin = Long.parseLong(request.getParameter("fechaFin"));
-            ArrayList<DBObject> arrayList = GetDynamicTable.getUsersPosicionesMapaCalorVendedores(usuario, fechaIncio, fechaFin); 
-            jSONObject.put("posiciones", arrayList);
+            //ArrayList<DBObject> arrayList = GetDynamicTable.getUsersPosicionesMapaCalorVendedores(usuario, fechaIncio, fechaFin); 
+//            jSONObject.put("posiciones", arrayList);
         } else {
             errores.add("register", new ActionMessage("erros.timepoSesion"));
             saveErrors(request, errores);

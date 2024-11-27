@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package com.iammagis.sga.reporte.indicadores;
-
-import com.iammagis.sga.mongo.PedidoMongoController;
+ 
 import com.iammagis.sga.mongo.UsuarioMongoController;
 import com.iammagis.sga.mongo.beans.Usuario;
 import com.mongodb.DBObject;
@@ -54,12 +53,7 @@ public class ResultadoIndicadores extends org.apache.struts.action.Action {
         if (usuario != null) {
             long fechaIncio = Long.parseLong(request.getParameter("fechaInicio"));
             long fechaFin = Long.parseLong(request.getParameter("fechaFin"));
-
-            //cargamos los indicadores de las fechas
-            PedidoMongoController pedidoMongoController = new PedidoMongoController();
-            List<DBObject> dBObjects = pedidoMongoController.getPedidosFromEmpresaAndFecha(usuario, fechaIncio, fechaFin);
-            jSONObject.put("pedidos", dBObjects);
-
+ 
             UsuarioMongoController usuarioMongoController = new UsuarioMongoController();
             List<DBObject> dBObjectsUsuarios = usuarioMongoController.getUsuariosInstitucion(usuario.getIdEmpresa());
             jSONObject.put("usuarios", dBObjectsUsuarios);
