@@ -25,19 +25,20 @@ function init(devices, actuadores) {
                 //verde
                 itemDispositivo = itemDispositivo.replace("$image", "img/state/green.png");
             }
-            var valores = "";
             var valoresMax = "";
             var valoresMin = "";
-            if (device.ultimoValor) {
-                valores = JSON.stringify(device.ultimoValor).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-            }
             if (device.valoresMax)
                 valoresMax = JSON.stringify(device.valoresMax).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
             if (device.valoresMin)
                 valoresMin = JSON.stringify(device.valoresMin).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
             itemDispositivo = itemDispositivo.replace("$nombre", device.nombre);
-            var valoresBr = valores.replaceAll(/\s/g, "<br>");
 
+            var valoresBr = "";
+            var ultimoValorJson = device.ultimoValor.map;
+            var keys = Object.keys(ultimoValorJson);
+            $.each(keys, function (index, key) {
+                valoresBr += key + " " + Number(ultimoValorJson[key]).toFixed(2) + "<BR>";
+            });
             itemDispositivo = itemDispositivo.replace("$id", index);
             itemDispositivo = itemDispositivo.replace("$valor", valoresBr);
             itemDispositivo = itemDispositivo.replace("$fecha", moment(parseInt(device.fechaUltimoRegistro.$numberLong)).format('YYYY-MM-DD h:mma'));
@@ -46,7 +47,6 @@ function init(devices, actuadores) {
             $("#dispositivos").append(itemDispositivo);
         });
     });
-
     $.get("pages_in/item_iotactuador_tablero.jsp", function (itemHtmlORG) {
         templateActuador = itemHtmlORG;
         $.each(actuadores, function (index, actuador) {
@@ -65,12 +65,19 @@ function init(devices, actuadores) {
                 itemDispositivo = itemDispositivo.replace("$image", "img/state/green.png");
             }
             itemDispositivo = itemDispositivo.replace("$id", index);
-            var valores = "";
-            if (actuador.ultimoValor) {
-                valores = JSON.stringify(actuador.ultimoValor).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-            }
+            var valoresBr = "";
+            var ultimoValorJson = actuador.ultimoValor.map;
+            var keys = Object.keys(ultimoValorJson);
+            $.each(keys, function (index, key) {
+                if (ultimoValorJson[key] == 0) {
+                    //Apagado
+                    valoresBr += "Apagado<BR>";
+                } else {
+                    //Encendido
+                    valoresBr += "Encendido<BR>";
+                }
+            });
             itemDispositivo = itemDispositivo.replace("$nombre", actuador.nombre);
-            var valoresBr = valores.replaceAll(/\s/g, "<br>");
             itemDispositivo = itemDispositivo.replace("$valor", valoresBr);
             itemDispositivo = itemDispositivo.replace("$fecha", moment(parseInt(actuador.fechaUltimoRegistro.$numberLong)).format('YYYY-MM-DD h:mma'));
             $("#actuadores").append(itemDispositivo);
@@ -101,29 +108,29 @@ function buscarReporte() {
                     //verde
                     $("#d" + index + " .imagen").attr("src", "img/state/green.png");
                 }
-                var valores = "";
-                if (device.ultimoValor) {
-                    valores = JSON.stringify(device.ultimoValor).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-                }
-                var valoresBr = valores.replaceAll(/\s/g, "<br>");
+
+
+                var valoresBr = "";
+                var ultimoValorJson = device.ultimoValor.map;
+                var keys = Object.keys(ultimoValorJson);
+                $.each(keys, function (index, key) {
+                    valoresBr += key + " " + Number(ultimoValorJson[key]).toFixed(2) + "<BR>";
+                });
                 $("#d" + index + " .valor").empty().append(valoresBr);
-                $("#d" + index + " .fecha").text("Sincronización: " + moment(parseInt(device.fechaUltimoRegistro)).format('YYYY-MM-DD h:mm a'));
 
                 var valoresMax = "";
                 var valoresMin = "";
-                if (device.ultimoValor) {
-                    valores = JSON.stringify(device.ultimoValor).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-                }
                 if (device.valoresMax)
                     valoresMax = JSON.stringify(device.valoresMax).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
                 if (device.valoresMin)
                     valoresMin = JSON.stringify(device.valoresMin).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-
                 $("#d" + index + " .minimo").empty().append(valoresMin);
                 $("#d" + index + " .maximo").empty().append(valoresMax);
+                $("#d" + index + " .fecha").text("Sincronización: " + moment(parseInt(device.fechaUltimoRegistro)).format('YYYY-MM-DD h:mm a'));
+
             });
-            
-            
+
+
             $.each(jsonCompleto.actuadores, function (index, actuador) {
                 var dateUltimaFecha = new Date();
                 var OneDay = parseInt(actuador.fechaUltimoRegistro) + (30 * 60 * 1000);
@@ -138,11 +145,18 @@ function buscarReporte() {
                     //verde
                     $("#a" + index + " .imagen").attr("src", "img/state/green.png");
                 }
-                var valores = "";
-                if (actuador.ultimoValor) {
-                    valores = JSON.stringify(actuador.ultimoValor).replaceAll("{", "").replaceAll("}", "").replaceAll("\"map\":", "").replaceAll("\"", "").replaceAll(",", "\n");
-                }
-                var valoresBr = valores.replaceAll(/\s/g, "<br>");
+                var valoresBr = "";
+                var ultimoValorJson = actuador.ultimoValor.map;
+                var keys = Object.keys(ultimoValorJson);
+                $.each(keys, function (index, key) {
+                    if (ultimoValorJson[key] == 0) {
+                        //Apagado
+                        valoresBr +="Apagado<BR>";
+                    } else {
+                        //Encendido
+                        valoresBr += "Encendido<BR>";
+                    }
+                });
                 $("#a" + index + " .valor").empty().append(valoresBr);
                 $("#a" + index + " .fecha").text("Sincronización: " + moment(parseInt(actuador.fechaUltimoRegistro)).format('YYYY-MM-DD h:mm a'));
 

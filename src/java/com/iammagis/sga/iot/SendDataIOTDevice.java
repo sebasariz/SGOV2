@@ -57,6 +57,7 @@ public class SendDataIOTDevice extends Action {
                         IOTDeviceMongoController deviceMongoController = new IOTDeviceMongoController();
                         IOTDevice iOTDevice = deviceMongoController.findIOTDeviceByUuid(jsonObjectValores.getString("uuid"));
                         if (iOTDevice != null) {
+                            jsonObjectValores.remove("time");
                             jsonObjectValores.remove("uuid");
                             iOTDevice.setFechaUltimoRegistro(System.currentTimeMillis());
                             iOTDevice.setUltimoValor(jsonObjectValores);

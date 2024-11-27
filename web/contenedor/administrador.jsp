@@ -28,18 +28,27 @@
         <li><a href="#">Inicio</a></li>
         <li><a href="#"><bean:message key="sga.tableroiot"/></a></li> 
     </ol>
-    <div class="content-wrap" id="dispositivos">
+     <div class="panel panel-default">
+        <div class="panel-heading font-header">Sensores</div>
+        <div class="panel-body">
+            <div class="content-wrap" id="dispositivos">  
+            </div> 
+        </div>
+    </div>
 
-         
-        
-    </div> 
+ 
 
-
-
+    <div class="panel panel-default">
+        <div class="panel-heading font-header">Actuadores</div>
+        <div class="panel-body">
+            <div class="content-wrap" id="actuadores">  
+            </div> 
+        </div>
+    </div>
     <script src="js-in/iot/iotdevices_tablerocontrol.js"></script>
     <script>
         $(function () {
-            init(<%=request.getAttribute("devices")%>);
+            init(<%=request.getAttribute("devices")%>,<%=request.getAttribute("actuadores")%>);
         });
     </script>
 

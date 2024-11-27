@@ -24,9 +24,9 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
 public class LoginUsuario extends Action {
+ 
 
-    private static final String SUCCESS = "success";
-
+    @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -69,8 +69,6 @@ public class LoginUsuario extends Action {
                         List listIot = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[0]);
                         request.setAttribute("devices", listIot);
                         List onOffIOT = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[1]);
-                        List dimmerIOT = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[2]);
-                        onOffIOT.addAll(dimmerIOT);
                         request.setAttribute("actuadores", onOffIOT);
                         content = "/contenedor/administrador.jsp";
                         break;

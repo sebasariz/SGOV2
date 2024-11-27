@@ -13,8 +13,8 @@
                 <div class="text-center"><img src="$image" class="img-circle img-70" alt=""></div>
                 <div class="m-t-10 text-center">
                     $nombre
-                    <div style="min-height:80px; word-wrap:break-word;" class="h1">$valor</div> 
-                    <div class="font-11 text-muted">Ultima sincronización : $fecha</div> 
+                    <div style="min-height:80px; word-wrap:break-word;" class="h2">$valor</div> 
+                    <div class="font-10 text-muted">Ultima sincronización : $fecha</div> 
                 </div> 
             </div>
             <div class="panel-body no-p">

@@ -105,6 +105,16 @@ public class IOTDeviceMongoController {
       List<DBObject> dBObjects = collection.find().toArray();
       return dBObjects;
    }
+   
+   public List<DBObject> getIOTDevicesByTipo(String idTipoIOTDevice) throws IOException {
+      MongoClient mongoClient = SessionControl.getMongoClient();
+      DB database = mongoClient.getDB(this.propertiesAcces.mongoDB);
+      DBCollection collection = database.getCollection("iotdevice");
+      BasicDBObject basicDBObject = new BasicDBObject(); 
+      basicDBObject.append("tipoString", idTipoIOTDevice);
+      List<DBObject> dBObjects = collection.find(basicDBObject).toArray();
+      return dBObjects;
+   }
 
    public List<DBObject> getIOTDevicesInstitucion(Integer idInstitucion) throws IOException {
       MongoClient mongoClient = SessionControl.getMongoClient();

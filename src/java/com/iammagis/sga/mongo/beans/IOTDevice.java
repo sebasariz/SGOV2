@@ -15,7 +15,7 @@ import org.json.JSONObject;
  */
 public class IOTDevice extends ActionForm {
 
-    transient public static String tipoDefine[] = {"Sensor", "Servo", "Motor de paso", "Led RGB"};
+    transient public static String tipoDefine[] = {"Sensor", "Actuador"};
     transient public static String tipoVisorDefina[] = {"Reloj", "Digital"};
     int idIOTDevice;
     String nombre;

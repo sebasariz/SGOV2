@@ -1,6 +1,7 @@
 package com.iammagis.sga.iot.tablero;
 
 import com.iammagis.sga.mongo.IOTDeviceMongoController;
+import com.iammagis.sga.mongo.beans.IOTDevice;
 import com.iammagis.sga.mongo.beans.Usuario;
 import com.iammagis.sga.support.CreateLogActividades;
 import java.util.List;
@@ -25,14 +26,21 @@ public class LoadTableroIot extends Action {
       ActionErrors errores = new ActionErrors();
       if (usuario != null) {
          IOTDeviceMongoController iOTDeviceMongoController = new IOTDeviceMongoController();
-         List listIot;
+         List listIotDevices;
+         List listIotActuadores;
          if (usuario.getIdTipoUsuario() == 1) {
-            listIot = iOTDeviceMongoController.getIOTDevices();
+            listIotDevices = iOTDeviceMongoController.getIOTDevicesByTipo(IOTDevice.tipoDefine[0]);
+            listIotActuadores = iOTDeviceMongoController.getIOTDevicesByTipo(IOTDevice.tipoDefine[1]);
          } else {
-            listIot = iOTDeviceMongoController.getIOTDevicesInstitucion(usuario.getIdEmpresa());
+            listIotDevices = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(),IOTDevice.tipoDefine[0]);
+            listIotActuadores = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(),IOTDevice.tipoDefine[1]);
          }
-
-         request.setAttribute("devices", listIot);
+          System.out.println("listIotActuadores: "+listIotActuadores.size());
+         request.setAttribute("devices", listIotDevices);
+         request.setAttribute("actuadores", listIotActuadores);
+         
+         
+         
          String content = "/pages/iot/iotdevices_tablerocontrol.jsp";
          request.setAttribute("contenido", content);
          CreateLogActividades.createLogActividades(usuario, "Ingresando a tablero de control.", request);

@@ -9,7 +9,6 @@ package com.iammagis.sga.administracion.usuario;
 import com.iammagis.sga.mongo.EmpresaMongoController;
 import com.iammagis.sga.mongo.IOTDeviceMongoController; 
 import com.iammagis.sga.mongo.UsuarioMongoController;
-import com.iammagis.sga.mongo.beans.Empresa;
 import com.iammagis.sga.mongo.beans.IOTDevice;
 import com.iammagis.sga.mongo.beans.Usuario;
 import com.iammagis.sga.support.CreateLogActividades;
@@ -93,8 +92,6 @@ public class LoadInicio extends org.apache.struts.action.Action {
                         List listIot = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[0]);
                         request.setAttribute("devices", listIot);
                         List onOffIOT = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[1]);
-                        List dimmerIOT = iOTDeviceMongoController.getIOTDevicesInstitucionAndTipo(usuario.getIdEmpresa(), IOTDevice.tipoDefine[2]);
-                        onOffIOT.addAll(dimmerIOT);
                         request.setAttribute("actuadores", onOffIOT);
                         content = "/contenedor/administrador.jsp";
                         break;
